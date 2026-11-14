@@ -26,6 +26,16 @@ export const metadata: Metadata = {
   description:
     "Conecta con tutores por etiquetas de materia (#Cálculo, #Probabilidad), identifica asesores #TutorPar o #Externo, revisa salones vacíos y agenda por WhatsApp.",
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-192x192.png?v=2", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png?v=2", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "BeeTeacher · Colmena de Tutores y Salones UG",
     description:

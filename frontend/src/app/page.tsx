@@ -36,7 +36,7 @@ export default function Home() {
     fetch("/api/v1/tutors")
       .then((res) => res.json())
       .then((data) => {
-        if (Array.isArray(data?.tutors) && data.tutors.length > 0) {
+        if (Array.isArray(data?.tutors)) {
           setTutorsList(data.tutors);
         }
       })
