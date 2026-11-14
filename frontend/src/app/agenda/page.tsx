@@ -781,7 +781,7 @@ export default function AgendaPage() {
                                   {ev.isRecurringSemester && (
                                     <Repeat
                                       className="w-3 h-3 shrink-0 opacity-75"
-                                      title="Materia fija del semestre"
+                                      aria-label="Materia fija del semestre"
                                     />
                                   )}
                                 </div>
