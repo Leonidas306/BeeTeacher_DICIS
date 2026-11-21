@@ -1,1 +1,325 @@
-[]
+[
+  {
+    "id": "148508",
+    "fullName": "Juan Leonardo Rivera Morales",
+    "career": "Ing. en Sistemas Computacionales",
+    "semester": "9 Semestre",
+    "communityTag": "DICIS",
+    "isExternal": false,
+    "isTutorPar": false,
+    "verified": true,
+    "modalities": [
+      "PRESENCIAL",
+      "VIRTUAL"
+    ],
+    "headquarters": "Salamanca",
+    "whatsapp": "4621312017",
+    "price30": 60,
+    "price60": 100,
+    "tutorParNote": "",
+    "subjectTags": [
+      "Calculo",
+      "Probabilidad",
+      "Programación"
+    ],
+    "bio": "",
+    "avatarUrl": "Juan Leonardo Rivera Morales",
+    "coverUrl": "https://lh3.googleusercontent.com/d/1Yv_b7YXwZxyZUvGAYfqVS8Jfq1jYXeII",
+    "coverGradient": "from-blue-700 via-indigo-700 to-slate-800",
+    "schedules": [
+      {
+        "day": "MONDAY",
+        "start": "08:00",
+        "end": "10:00"
+      },
+      {
+        "day": "MONDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "TUESDAY",
+        "start": "10:00",
+        "end": "12:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "FRIDAY",
+        "start": "10:00",
+        "end": "12:00"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "rev_1",
+        "studentNua": "123456",
+        "stars": 5,
+        "subject": "programacion",
+        "modality": "Verificada por NUA",
+        "comment": "buen tutor , muy atento.se toma el tiempo de explicar",
+        "date": "10/11/2026"
+      }
+    ]
+  },
+  {
+    "id": "148509",
+    "fullName": "Fernado Luna Calderon",
+    "career": "Ing. Electrica",
+    "semester": "8 Semestre",
+    "communityTag": "DICIS",
+    "isExternal": false,
+    "isTutorPar": true,
+    "verified": true,
+    "modalities": [
+      "PRESENCIAL",
+      "VIRTUAL"
+    ],
+    "headquarters": "Salamanca",
+    "whatsapp": "4641150542",
+    "price30": 70,
+    "price60": 130,
+    "tutorParNote": "",
+    "subjectTags": [
+      "Circuitos",
+      "Electronica"
+    ],
+    "bio": "",
+    "avatarUrl": "Fernado Luna Calderon",
+    "coverUrl": "https://lh3.googleusercontent.com/d/10a6UIFf6S_RS8q907EPfVoEDPj7J1WPa",
+    "coverGradient": "from-indigo-600 via-emerald-600 to-teal-700",
+    "schedules": [
+      {
+        "day": "MONDAY",
+        "start": "08:00",
+        "end": "10:00"
+      },
+      {
+        "day": "TUESDAY",
+        "start": "10:00",
+        "end": "12:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "start": "10:00",
+        "end": "12:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "FRIDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "SATURDAY",
+        "start": "10:00",
+        "end": "12:00"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "147776",
+    "fullName": "Juan Pablo Martinez Flores",
+    "career": "Ing. en Sistemas Computacionales",
+    "semester": "10 Semestre",
+    "communityTag": "DICIS",
+    "isExternal": false,
+    "isTutorPar": false,
+    "verified": true,
+    "modalities": [
+      "PRESENCIAL"
+    ],
+    "headquarters": "Salamanca",
+    "whatsapp": "4641670551",
+    "price30": 50,
+    "price60": 75,
+    "tutorParNote": "",
+    "subjectTags": [
+      "Calculo",
+      "Algebra Lineal",
+      "Ecuaciones Diferenciales",
+      "Ingles",
+      "Bases de Datos"
+    ],
+    "bio": "",
+    "avatarUrl": "Juan Pablo Martinez Flores",
+    "coverUrl": "https://lh3.googleusercontent.com/d/1bqjdi6sC7HeKOzXWMVVs80WdM9APbhQ3",
+    "coverGradient": "from-blue-700 via-indigo-700 to-slate-800",
+    "schedules": [
+      {
+        "day": "MONDAY",
+        "start": "08:00",
+        "end": "10:00"
+      },
+      {
+        "day": "TUESDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "TUESDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "FRIDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "FRIDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "SATURDAY",
+        "start": "10:00",
+        "end": "12:00"
+      },
+      {
+        "day": "SATURDAY",
+        "start": "12:00",
+        "end": "14:00"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "392217",
+    "fullName": "Luis Daniel Armenta Leon",
+    "career": "Lic. en  Gestión Empresarial",
+    "semester": "10 Semestre",
+    "communityTag": "DICIS",
+    "isExternal": false,
+    "isTutorPar": false,
+    "verified": true,
+    "modalities": [
+      "PRESENCIAL",
+      "VIRTUAL"
+    ],
+    "headquarters": "Salamanca",
+    "whatsapp": "4641745392",
+    "price30": 60,
+    "price60": 120,
+    "tutorParNote": "",
+    "subjectTags": [
+      "Probabilidad",
+      "Inglés",
+      "Contabilidad",
+      "Finanzas",
+      "Administración",
+      "Economía"
+    ],
+    "bio": "",
+    "avatarUrl": "Luis Daniel Armenta Leon",
+    "coverUrl": "https://lh3.googleusercontent.com/d/1aw7bBT2fvHGJT-j-FBddF-xJIDrW2KCp",
+    "coverGradient": "from-blue-700 via-indigo-700 to-slate-800",
+    "schedules": [
+      {
+        "day": "MONDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "TUESDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "WEDNESDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "FRIDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "SATURDAY",
+        "start": "10:00",
+        "end": "12:00"
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "148809",
+    "fullName": "Emiliano Orozco Rojas",
+    "career": "Lic. en Comercio Internacional",
+    "semester": "7 Semestre",
+    "communityTag": "DICIS",
+    "isExternal": false,
+    "isTutorPar": true,
+    "verified": true,
+    "modalities": [
+      "VIRTUAL"
+    ],
+    "headquarters": "Salamanca",
+    "whatsapp": "4623057174",
+    "price30": 60,
+    "price60": 100,
+    "tutorParNote": "Si necesitas ayuda no dudes en contactarme.",
+    "subjectTags": [
+      "Inglés",
+      "Administración",
+      "Mercadotecnia",
+      "Comercio Exterior"
+    ],
+    "bio": "Si necesitas ayuda no dudes en contactarme.",
+    "avatarUrl": "Emiliano Orozco Rojas",
+    "coverUrl": "https://lh3.googleusercontent.com/d/18HHxTG_uOO8MUWxeiqsskcvWfiCHoHC8",
+    "coverGradient": "from-indigo-600 via-emerald-600 to-teal-700",
+    "schedules": [
+      {
+        "day": "TUESDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "TUESDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "FRIDAY",
+        "start": "12:00",
+        "end": "14:00"
+      },
+      {
+        "day": "FRIDAY",
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "day": "SATURDAY",
+        "start": "10:00",
+        "end": "12:00"
+      },
+      {
+        "day": "SATURDAY",
+        "start": "12:00",
+        "end": "14:00"
+      }
+    ],
+    "reviews": []
+  }
+]
