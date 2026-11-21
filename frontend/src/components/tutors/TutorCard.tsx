@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle2, GraduationCap, Heart, Mail, Star } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TutorService } from "@/backend/services/tutor.service";
 import type { TutorProfile } from "@/backend/types";
 
@@ -14,6 +14,19 @@ interface TutorCardProps {
   delay?: number;
 }
 
+function getFallbackCandidates(url?: string): string[] {
+  if (!url) return [];
+  const match = url.match(/[?&]id=([a-zA-Z0-9_-]{10,})/);
+  if (!match?.[1]) return [url];
+  const id = match[1];
+  return [
+    url,
+    `${url}&retry=1`,
+    `https://lh3.googleusercontent.com/d/${id}=w800`,
+    `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
+  ];
+}
+
 export default function TutorCard({
   tutor,
   isFavorite,
@@ -21,8 +34,16 @@ export default function TutorCard({
   onSelectTag,
   onClick,
 }: TutorCardProps) {
-  const [avatarError, setAvatarError] = useState(false);
-  const [coverError, setCoverError] = useState(false);
+  const avatarCandidates = getFallbackCandidates(tutor.avatarUrl);
+  const coverCandidates = getFallbackCandidates(tutor.coverUrl);
+
+  const [avatarAttempt, setAvatarAttempt] = useState(0);
+  const [coverAttempt, setCoverAttempt] = useState(0);
+
+  useEffect(() => {
+    setAvatarAttempt(0);
+    setCoverAttempt(0);
+  }, [tutor.avatarUrl, tutor.coverUrl]);
 
   const rating = TutorService.getAverageRating(tutor);
   const initials = tutor.fullName
@@ -38,8 +59,11 @@ export default function TutorCard({
       ? "from-amber-600 via-orange-600 to-rose-700"
       : "from-indigo-600 via-emerald-600 to-teal-700");
 
-  const showCoverImage = Boolean(tutor.coverUrl && !coverError);
-  const showAvatarImage = Boolean(tutor.avatarUrl && !avatarError);
+  const activeCoverUrl = coverCandidates[coverAttempt];
+  const activeAvatarUrl = avatarCandidates[avatarAttempt];
+
+  const showCoverImage = Boolean(activeCoverUrl);
+  const showAvatarImage = Boolean(activeAvatarUrl);
 
   return (
     <div
@@ -52,10 +76,16 @@ export default function TutorCard({
       >
         {showCoverImage && (
           <img
-            src={tutor.coverUrl}
+            src={activeCoverUrl}
             alt={`Portada de ${tutor.fullName}`}
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
-            onError={() => setCoverError(true)}
+            onError={() => {
+              setTimeout(() => {
+                setCoverAttempt((prev) => prev + 1);
+              }, 250);
+            }}
             className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
           />
         )}
@@ -119,10 +149,16 @@ export default function TutorCard({
         <div className="flex items-end justify-between -mt-9 mb-3 relative z-10">
           {showAvatarImage ? (
             <img
-              src={tutor.avatarUrl}
+              src={activeAvatarUrl}
               alt={tutor.fullName}
+              loading="lazy"
+              decoding="async"
               referrerPolicy="no-referrer"
-              onError={() => setAvatarError(true)}
+              onError={() => {
+                setTimeout(() => {
+                  setAvatarAttempt((prev) => prev + 1);
+                }, 250);
+              }}
               className="w-16 h-16 rounded-2xl object-cover object-center border-4 border-white dark:border-[#0D1322] shadow-md bg-white"
             />
           ) : (

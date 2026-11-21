@@ -45,8 +45,8 @@ export default function TutorModal({ tutor, onClose }: TutorModalProps) {
   const [selectedRoom, setSelectedRoom] = useState<string>("");
   const [copied, setCopied] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [avatarError, setAvatarError] = useState(false);
-  const [coverError, setCoverError] = useState(false);
+  const [avatarAttempt, setAvatarAttempt] = useState(0);
+  const [coverAttempt, setCoverAttempt] = useState(0);
 
   useEffect(() => {
     if (!tutor) return;
@@ -54,8 +54,8 @@ export default function TutorModal({ tutor, onClose }: TutorModalProps) {
     setSelectedScheduleIdx(0);
     setSelectedModality(tutor.modalities[0] ?? "PRESENCIAL");
     setRequestType(tutor.isTutorPar ? "TUTOR_PAR" : "PARTICULAR");
-    setAvatarError(false);
-    setCoverError(false);
+    setAvatarAttempt(0);
+    setCoverAttempt(0);
   }, [tutor]);
 
   const currentSlot =
@@ -147,8 +147,24 @@ export default function TutorModal({ tutor, onClose }: TutorModalProps) {
     ? `mailto:${tutor.email}?subject=${encodeURIComponent(`Asesoría de #${selectedSubject} - BeeTeacher UG`)}&body=${encodeURIComponent(previewMessage)}`
     : "";
 
-  const showCoverImage = Boolean(tutor.coverUrl && !coverError);
-  const showAvatarImage = Boolean(tutor.avatarUrl && !avatarError);
+  const getModalCandidates = (url?: string): string[] => {
+    if (!url) return [];
+    const match = url.match(/[?&]id=([a-zA-Z0-9_-]{10,})/);
+    if (!match?.[1]) return [url];
+    const id = match[1];
+    return [
+      url,
+      `${url}&retry=1`,
+      `https://lh3.googleusercontent.com/d/${id}=w1000`,
+      `https://drive.google.com/thumbnail?id=${id}&sz=w1000`,
+    ];
+  };
+
+  const activeCoverUrl = getModalCandidates(tutor.coverUrl)[coverAttempt];
+  const activeAvatarUrl = getModalCandidates(tutor.avatarUrl)[avatarAttempt];
+
+  const showCoverImage = Boolean(activeCoverUrl);
+  const showAvatarImage = Boolean(activeAvatarUrl);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6">
@@ -164,10 +180,10 @@ export default function TutorModal({ tutor, onClose }: TutorModalProps) {
           >
             {showCoverImage && (
               <img
-                src={tutor.coverUrl}
+                src={activeCoverUrl}
                 alt={`Portada de ${tutor.fullName}`}
                 referrerPolicy="no-referrer"
-                onError={() => setCoverError(true)}
+                onError={() => setCoverAttempt((p) => p + 1)}
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
             )}
@@ -222,10 +238,10 @@ export default function TutorModal({ tutor, onClose }: TutorModalProps) {
               <div className="flex items-end gap-4">
                 {showAvatarImage ? (
                   <img
-                    src={tutor.avatarUrl}
+                    src={activeAvatarUrl}
                     alt={tutor.fullName}
                     referrerPolicy="no-referrer"
-                    onError={() => setAvatarError(true)}
+                    onError={() => setAvatarAttempt((p) => p + 1)}
                     className="w-24 h-24 rounded-3xl object-cover object-center border-4 border-white dark:border-[#0D1322] shadow-xl bg-white shrink-0"
                   />
                 ) : (
